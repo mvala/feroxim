@@ -26,3 +26,15 @@
 *.exe
 *.out
 *.app
+
+# exlipse
+.cproject
+.project
+
+# tmp directories
+build
+include
+lib
+tmp
+pars
+
