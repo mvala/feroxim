@@ -32,6 +32,7 @@ public:
 		return fRate1;
 	}
 
+	TTimeStamp* GetDateTime() const;
 	void Reset();
 
 private:
@@ -41,6 +42,8 @@ private:
 	Double_t fRate2;
 
 ClassDef(TFxRateObj, 1)
+
+
 };
 
 #endif

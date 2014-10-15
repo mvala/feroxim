@@ -30,6 +30,7 @@
 # exlipse
 .cproject
 .project
+.settings
 
 # tmp directories
 build

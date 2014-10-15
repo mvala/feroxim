@@ -36,3 +36,7 @@ void TFxRateObj::Reset() {
 	fRate1 = 0.0;
 	fRate2 = 0.0;
 }
+
+TTimeStamp* TFxRateObj::GetDateTime() const {
+    return fDateTime;
+}

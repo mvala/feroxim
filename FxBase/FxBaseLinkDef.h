@@ -5,6 +5,8 @@
 #pragma link off all functions;
 
 #pragma link C++ class TFxRateObj+;
+#pragma link C++ class TFxPredictorObj+;
+#pragma link C++ class TFxPredictor+;
 #pragma link C++ class TFxRateSelector+;
 
 

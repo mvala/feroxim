@@ -3,6 +3,8 @@ set(PACKAGE FxBase)
 
 set(SRCS
     TFxRateObj.cxx
+    TFxPredictorObj.cxx
+    TFxPredictor.cxx
     TFxRateSelector.cxx
 )
 
