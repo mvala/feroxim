@@ -1,6 +1,7 @@
 #ifndef __CINT__
 #include <Riostream.h>
 #include <TChain.h>
+#include <TString.h>
 #include <TFileCollection.h>
 #include <TProof.h>
 #include <TFxRateObj.h>
@@ -17,10 +18,13 @@ void GeneratePredictors(Bool_t refreshDS = kFALSE) {
 	const char *dsname = "myds";
 //	refreshDS = kTRUE;
 
+	TString proofSource = "";
+	proofSource="mgmt1";
+
 	TFileCollection *fc = new TFileCollection("myfc", "");
 	fc->AddFromFile(filename);
 
-	TProof *p = TProof::Open("");
+	TProof *p = TProof::Open(proofSource.Data());
 	if (!p)
 		return;
 //	p->SetParameter("PROOF_CacheSize", 2e3);
