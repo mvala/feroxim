@@ -9,13 +9,15 @@
 #include <TFxPredictor.h>
 #endif
 
-void GeneratePredictors(Bool_t refreshDS = kFALSE) {
+void GeneratePredictors(Int_t ls=100, Double_t q=1, Double_t m=0.0, Double_t phi=0.0) {
 
     TString filename = "/home/mvala/git/github/mvala/feroxim/macros/files.txt";
 //	filename = "/home/mvala/git/github/mvala/feroxim/macros/files_eos.txt";
 
     const char *dsname = "myds";
-//	refreshDS = kTRUE;
+
+    Bool_t refreshDS = kTRUE;
+//	refreshDS = kFALSE;
 
     TString proofSource = "";
 //	proofSource="mgmt1";
@@ -38,12 +40,13 @@ void GeneratePredictors(Bool_t refreshDS = kFALSE) {
     p->ShowDataSets(dsname);
 
     TFxRateSelector *sel = new TFxRateSelector();
-    sel->SetFilename("/tmp/my.root");
+    sel->SetFilename(TString::Format("FXSIM_%d_%.2f_%.2f_%.2f.root",ls,q,m,phi).Data());
 
-    TFxPredictor *predictor = new TFxPredictor(1300,8,1,0);
+//    TFxPredictor *predictor = new TFxPredictor(1300,8,1,0);
+    TFxPredictor *predictor = new TFxPredictor(ls,q,m,phi);
     sel->SetPredictor(predictor);
 
 
-//    p->Process(fc, sel, "", 1e7);
     p->Process(fc, sel);
+//    p->Process(fc, sel, "" , 41.3*1e6, 30.3*1e6);
 }

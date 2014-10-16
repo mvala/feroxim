@@ -22,7 +22,7 @@ if [ -n "$1" ];then
   cp -r $PROJECT_DIR/$MACRO_DIR/* .
   cp -r $PROJECT_DIR/pars/* .
 fi
-
+cd $MY_PWD
 nice -n 15 root $ROOT_ARGS -l $PROJECT_DIR/macros/MainRun.C'("'$MACRO'","'$*'","'$PROJECT_DIR/'")'
 
-cd $MY_PWD
+
