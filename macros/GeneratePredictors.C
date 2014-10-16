@@ -12,7 +12,7 @@
 void GeneratePredictors(Int_t ls=100, Double_t q=1, Double_t m=0.0, Double_t phi=0.0) {
 
     TString filename = "/home/mvala/git/github/mvala/feroxim/macros/files.txt";
-//	filename = "/home/mvala/git/github/mvala/feroxim/macros/files_eos.txt";
+	filename = "/eos/saske.sk/scratch/files_eos.txt";
 
     const char *dsname = "myds";
 
