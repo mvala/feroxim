@@ -43,7 +43,7 @@ void GeneratePredictors(Int_t ls=100, Double_t q=1, Double_t m=0.0, Double_t phi
     TFxRateSelector *sel = new TFxRateSelector();
     sel->SetFilename(outFileName.Data());
 
-    ::Info("","Output file => %s",outFileName.Data());
+    Printf("Output file => %s",outFileName.Data());
 //    TFxPredictor *predictor = new TFxPredictor(1300,8,1,0);
     TFxPredictor *predictor = new TFxPredictor(ls,q,m,phi);
     sel->SetPredictor(predictor);
