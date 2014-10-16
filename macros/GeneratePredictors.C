@@ -37,7 +37,7 @@ void GeneratePredictors(Int_t ls=100, Double_t q=1, Double_t m=0.0, Double_t phi
 //        p->RegisterDataSet(dsname, fc);
 //        p->VerifyDataSet(dsname);
 //    }
-    p->ShowDataSets(dsname);
+//    p->ShowDataSets(dsname);
 
     TString outFileName = TString::Format("%s/FXSIM_%d_%.2f_%.2f_%.2f.root",gSystem->WorkingDirectory(),ls,q,m,phi);
     TFxRateSelector *sel = new TFxRateSelector();
@@ -49,7 +49,8 @@ void GeneratePredictors(Int_t ls=100, Double_t q=1, Double_t m=0.0, Double_t phi
     sel->SetPredictor(predictor);
 
 
-    p->Process(dsname, sel, "", 1e5);
+//    p->Process(dsname, sel, "", 1e5);
+    p->Process(dsname, sel);
 //    p->Process(fc, sel);
 //    p->Process(fc, sel, "" , 41.3*1e6, 30.3*1e6);
 }
