@@ -88,6 +88,7 @@ void TFxRateSelector::SlaveTerminate() {
     fOutputFile->Write();
 //    fOutputFile->Close();
     delete fOutputFile;
+    delete fRates;
 }
 
 void TFxRateSelector::Terminate() {
