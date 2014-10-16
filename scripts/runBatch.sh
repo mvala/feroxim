@@ -4,6 +4,8 @@
 
 WK_DIR="/scratch/tmp/$SLURM_JOB_ID"
 
+rm -Rf $WK_DIR
+mkdir -p $WK_DIR
 cd $WK_DIR
 git clone https://github.com/mvala/feroxim.git
 cd feroxim

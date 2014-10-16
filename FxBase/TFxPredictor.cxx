@@ -41,13 +41,20 @@ Double_t TFxPredictor::Calulate(TArrayD *rates) {
     // setting m to 0.0
     Double_t m = -1.0;
 
-    // TODO calculate min, max
-    Double_t min = 1.0;
-    Double_t max = 2.0;
 
     if (rates->GetSize() < fLs) return -1.0;
 
     Double_t tau, stand, x, fcs;
+
+    // calculate min, max
+    Double_t min = 1e6;
+    Double_t max = 0.0;
+    for (Int_t i = 0; i < rates->GetSize(); i++) {
+        tau = rates->At(i);
+        if (tau<min) min = tau;
+        if (tau>max) max = tau;
+    }
+
     for (Int_t i = 0; i < rates->GetSize(); i++) {
         tau = rates->At(i);
         stand = (tau - min) / (max - min);
