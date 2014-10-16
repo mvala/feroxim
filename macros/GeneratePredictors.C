@@ -17,7 +17,7 @@ void GeneratePredictors(Int_t ls=100, Double_t q=1, Double_t m=0.0, Double_t phi
     const char *dsname = "myds";
 
     Bool_t refreshDS = kTRUE;
-	refreshDS = kFALSE;
+//	refreshDS = kFALSE;
 
     TString proofSource = "";
 //	proofSource="mgmt1";
@@ -50,6 +50,6 @@ void GeneratePredictors(Int_t ls=100, Double_t q=1, Double_t m=0.0, Double_t phi
 
 
 //    p->Process(dsname, sel, "", 1e5);
-    p->Process(dsname, sel);
+    p->Process(fc, sel);
 //    p->Process(fc, sel, "" , 41.3*1e6, 30.3*1e6);
 }
