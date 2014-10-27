@@ -4,6 +4,8 @@ set(PACKAGE FxBase)
 set(SRCS
     TFxRateObj.cxx
     TFxPredictorObj.cxx
+    TFxAccount.cxx
+    TFxTrade.cxx
     TFxPredictor.cxx
     TFxRateSelector.cxx
 )
